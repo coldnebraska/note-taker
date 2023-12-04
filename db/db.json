@@ -1,10 +1,7 @@
 [
     {
+        "id": "Test Id",
         "title": "Test Title",
         "text": "Test text"
-    },
-    {
-        "title": "Sarah",
-        "text": "UI"
     }
 ]
