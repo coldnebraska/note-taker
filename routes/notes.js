@@ -1,13 +1,13 @@
 const notes = require("express").Router()
-const {readAndAppend} = require("../helpers/fsUtils")
+const { readFromFile, readAndAppend } = require("../helpers/fsUtils")
 
 // GET Route for retrieving all the feedback
-notes.get('/api/notes', (req, res) =>
+notes.get('/', (req, res) =>
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 )
 
 // POST Route for submitting feedback
-notes.post('/api/notes', (req, res) => {
+notes.post('/', (req, res) => {
   // Destructuring assignment for the items in req.body
     const { title, text } = req.body
 
