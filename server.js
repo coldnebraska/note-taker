@@ -13,7 +13,9 @@ app.use("/api", api)
 
 // path to index.html
 app.use(express.static("public"))
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
+
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')))
 
 // path to notes.html
 app.get("/notes", (req, res) => res.json(noteData))
